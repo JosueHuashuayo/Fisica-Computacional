@@ -1,4 +1,4 @@
-def resolver_ecuacion_continuidad(A1, v1, A2, v2):
+def ecuacion_continuidad(A1, v1, A2, v2):
     if A1 is None:
         A1 = (A2 * v2) / v1
     elif v1 is None:
@@ -17,7 +17,7 @@ A2 = float(input("Ingrese el área en el punto 2 (m^2): "))
 v2 = float(input("Ingrese la velocidad en el punto 2 (m/s): "))
 
 # Resolución de la ecuación de continuidad
-A1, v1, A2, v2 = resolver_ecuacion_continuidad(A1, v1, A2, v2)
+A1, v1, A2, v2 = ecuacion_continuidad(A1, v1, A2, v2)
 
 # Resultados
 print("Resultados:")
