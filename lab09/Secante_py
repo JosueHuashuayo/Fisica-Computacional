@@ -1,0 +1,24 @@
+import math as ma
+
+def secant_method_recursive(f, x0, x1, tolerance):
+    """
+    Método de la secante recursivo para encontrar una raíz de una función.
+    
+    Args:
+        f: La función para la cual se desea encontrar la raíz.
+        x0: El primer punto inicial de partida.
+        x1: El segundo punto inicial de partida.
+        tolerance: La tolerancia para considerar que se ha encontrado una raíz.
+
+    """
+    x_next = x1 - (f(x1) * (x1 - x0)) / (f(x1) - f(x0))
+    
+    if abs(x_next - x1) <= tolerance:
+        return x_next
+    
+    return secant_method_recursive(f, x1, x_next, tolerance)
+
+def f(x):
+    return 10 * ma.exp(x/2) * ma.cos(2*x) - 4
+root = secant_method_recursive(f, -3, 0,0.000001)
+print("Raíz encontrada:", root)
